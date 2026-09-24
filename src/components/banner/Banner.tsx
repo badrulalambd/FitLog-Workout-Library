@@ -3,8 +3,8 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className='bg-[#0F1115]'>
-            <div className='container mx-auto mt-15 py-20'>
+        <div className='bg-[#0F1115] mt-20 py-15'>
+            <div className='container mx-auto'>
 
                 <div className="rounded-3xl bg-[#1A1D23] py-10">
                     <div className="flex flex-col md:flex-col lg:flex-row gap-5">
