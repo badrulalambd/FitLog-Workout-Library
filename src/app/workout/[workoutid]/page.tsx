@@ -1,5 +1,4 @@
 import AddToTodaysPlan from "@/components/buttons/AddToPlan";
-import AddToPlan from "@/components/buttons/AddToPlan";
 import SaveForLater from "@/components/buttons/SaveForLater";
 import Image from "next/image";
 
@@ -12,7 +11,7 @@ interface WorkoutDetailPageProps {
 
 const getWorkoutData = async () => {
     try {
-        const res = await fetch('https://api.abcz.workers.dev/api/fitlog');
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`);
         const data = await res.json();
         return data;
     } catch (error) {

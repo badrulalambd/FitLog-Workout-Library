@@ -1,9 +1,7 @@
 'use client'
 
 import { UserContext } from '@/context/UserContext';
-import Link from 'next/link';
 import { useContext } from 'react';
-import { FaCheck } from 'react-icons/fa';
 import { RxCross2 } from 'react-icons/rx';
 import { Bounce, toast } from 'react-toastify';
 
