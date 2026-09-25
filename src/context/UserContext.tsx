@@ -45,8 +45,10 @@ const UserContextProvider = ({children} : {children : ReactNode}) => {
 
     const [addedWorkoutPlan, setAddedWorkoutPlan] = useState<IWorkoutType[]>([]);
     const [savedPlan, setSavedPlan] = useState<IWorkoutType[]>([]);
+
     const [planCount, setPlanCount] = useState<number>(0);
     const [savedCount, setSavedCount] = useState<number>(0);
+    
     const [durationCount, setDurationCount] = useState<number>(0);
     const [caloriesCount, setCaloriesCount] = useState<number>(0);
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const Banner = () => {
@@ -25,9 +26,11 @@ const Banner = () => {
                             </p>
 
                             <div className="mt-8">
-                                <button className="rounded-xl bg-[#C4F002] px-6 py-3 text-lg font-bold text-[#1A1D23] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d4ff32] hover:shadow-lg hover:shadow-[#C4F002]/20">
-                                    Browse Workouts
-                                </button>
+                                <Link href='/#library'>
+                                    <button className="cursor-pointer rounded-xl bg-[#C4F002] px-6 py-3 text-lg font-bold text-[#1A1D23] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d4ff32] hover:shadow-lg hover:shadow-[#C4F002]/20">
+                                        Browse Workouts
+                                    </button>
+                                </Link>
                             </div>
                         </div>
 

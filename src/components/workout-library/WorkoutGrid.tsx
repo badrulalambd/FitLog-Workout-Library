@@ -17,7 +17,7 @@ const WorkoutLibraryGrid = async () => {
     const workoutData = await getWorkoutData();
 
     return (
-        <div className="bg-[#0F1115] text-gray-200">
+        <div className="bg-[#0F1115] text-gray-200" id="library">
             <div className="container mx-auto pb-15 flex flex-col gap-10">
                 <div>
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold uppercase">The Library</h2>
