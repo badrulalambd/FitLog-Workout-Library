@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import {  Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/navbar/Navbar";
+import UserContextProvider from "@/context/UserContext";
 
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-   weight: ['400', '700'],
+  weight: ['400', '700'],
 });
 
 
@@ -35,11 +36,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
 
-        <Navbar />
-        <main>
-          {children}
-        </main>
-        <ToastContainer />
+        <UserContextProvider>
+          <Navbar />
+          <main>
+            {children}
+          </main>
+          <ToastContainer />
+        </UserContextProvider>
 
       </body>
     </html>

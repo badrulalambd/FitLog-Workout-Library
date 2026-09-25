@@ -1,6 +1,7 @@
+import AddToTodaysPlan from "@/components/buttons/AddToPlan";
+import AddToPlan from "@/components/buttons/AddToPlan";
+import SaveForLater from "@/components/buttons/SaveForLater";
 import Image from "next/image";
-import { FaRegBookmark } from "react-icons/fa";
-import { LuCalendarPlus } from "react-icons/lu";
 
 
 interface WorkoutDetailPageProps {
@@ -27,10 +28,6 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
     const workoutData = await getWorkoutData();
 
     const workout: IWorkoutType = workoutData.find((work: IWorkoutType) => String(work.id) === String(workoutid))
-
-    const handleAddToPlan = () => {
-        
-    }
 
     return (
         <div className="bg-[#0F1115] mt-20 py-15">
@@ -170,20 +167,14 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
                         </div>
 
                         {/* Buttons */}
-                                                <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                        <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
                             {/* Add to Today's Plan */}
-                            <button 
-                            onClick={handleAddToPlan}
-                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#ccff00] px-6 py-3.5 text-base font-bold text-[#1A1D23] shadow-md shadow-[#ccff00]/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d8ff4d] hover:shadow-lg hover:shadow-[#ccff00]/20">
-                                <LuCalendarPlus className="text-xl" />
-                                Add to today&apos;s plan
-                            </button>
+                            <AddToTodaysPlan 
+                            workout={workout}
+                            />
 
                             {/* Save for Later */}
-                            <button className="inline-flex items-center justify-center gap-2 rounded-xl border border-white bg-transparent px-6 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:border-transparent hover:bg-[#1A1D23] hover:text-white">
-                                <FaRegBookmark className="text-lg" />
-                                Save for later
-                            </button>
+                            <SaveForLater />
                         </div>
 
                     </div>
