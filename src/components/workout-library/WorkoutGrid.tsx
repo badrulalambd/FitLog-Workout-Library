@@ -2,7 +2,7 @@ import WorkoutLibraryCard from "@/components/workout-library/WorkoutLibraryCard"
 
 const getWorkoutData = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}` , {cache: 'force-cache'});
         const data = await res.json();
         return data;
     } catch (error) {

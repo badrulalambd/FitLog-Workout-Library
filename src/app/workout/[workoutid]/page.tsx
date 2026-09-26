@@ -11,7 +11,7 @@ interface WorkoutDetailPageProps {
 
 const getWorkoutData = async () => {
     try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}`, {cache : 'force-cache'});
         const data = await res.json();
         return data;
     } catch (error) {
@@ -31,7 +31,7 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
     return (
         <div className="bg-[#0F1115] mt-20 py-15">
             <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mx-5">
                     {/* Left side */}
                     <div className="h-full">
                         <figure className="relative h-87.5 w-full overflow-hidden rounded-3xl bg-[#1A1D23] sm:h-112.5 md:h-full md:min-h-full">
@@ -51,7 +51,7 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
                     {/* Right side */}
                     <div className="flex flex-col gap-6">
                         <div className="text-white">
-                            <h2 className="text-3xl md:text-4xl lg:text-5xl uppercase font-semibold">{workout.name}</h2>
+                            <h2 className="text-2xl md:text-3xl lg:text-4xl uppercase font-semibold">{workout.name}</h2>
                         </div>
                         <div className="text-white text-[18px] md:text-[20px]">
                             <p>{workout.description}</p>
