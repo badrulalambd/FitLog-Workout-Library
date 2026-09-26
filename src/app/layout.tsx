@@ -4,6 +4,7 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import Navbar from "@/components/navbar/Navbar";
 import UserContextProvider from "@/context/UserContext";
+import Footer from "@/components/footer/Footer";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main>
             {children}
           </main>
+          <Footer />
           <ToastContainer />
         </UserContextProvider>
 

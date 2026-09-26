@@ -140,17 +140,12 @@ const Navbar = () => {
 
                     {/* Logo */}
                     <Link href='/'>
-                        <div className="flex items-center gap-2">
-                            <Image
-                                src="/asset/logo.png"
-                                height={32}
-                                width={32}
-                                alt="Logo"
-                            />
-                            <span className="text-2xl font-bold tracking-wide">
-                                FITLOG
-                            </span>
-                        </div>
+                        <Image
+                            src="/asset/Link - Brand Logo.png"
+                            width={94}
+                            height={28}
+                            alt="Logo"
+                        />
                     </Link>
                 </div>
 

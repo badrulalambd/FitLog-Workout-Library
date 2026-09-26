@@ -96,7 +96,6 @@ const PlanTabs = () => {
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}
                         className="w-full cursor-pointer rounded-xl border border-gray-700 bg-[#0F1115] px-4 py-2.5 text-sm font-medium text-gray-300 outline-none transition-all duration-300 hover:border-[#ccff00] focus:border-[#ccff00] sm:min-w-45"
-                        defaultValue="all"
                     >
                         <option value={"duration"}>Duration</option>
                         <option value={"calories"}>Calories</option>
