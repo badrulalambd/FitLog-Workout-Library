@@ -173,7 +173,9 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
                             />
 
                             {/* Save for Later */}
-                            <SaveForLater />
+                            <SaveForLater 
+                            workout={workout}
+                            />
                         </div>
 
                     </div>

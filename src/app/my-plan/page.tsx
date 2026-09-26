@@ -1,6 +1,5 @@
 import InfoTable from '@/components/my-plan/InfoTable';
 import PlanTabs from '@/components/my-plan/PlanTabs';
-import React from 'react';
 
 const MyPlanPage = () => {
     return (
@@ -17,10 +16,8 @@ const MyPlanPage = () => {
                 {/* Table Section.... */}
                 <InfoTable />
 
-                {/* Tab section with planed and saved workout list */}
-                {/* name of each tab group should be unique */}
+                {/* Tab section with planed and saved workout list and filtering dropdow */}
                 <PlanTabs />
-                
 
             </div>
         </div>

@@ -9,22 +9,22 @@ interface IMarkDoneProp {
     workout: IWorkoutType;
 }
 
-const CrossButton = ({ workout }: IMarkDoneProp) => {
+const SavedCrossButton = ({ workout }: IMarkDoneProp) => {
 
     const contextValue = useContext(UserContext);
-    const { addedWorkoutPlan, setAddedWorkoutPlan, planCount, setPlanCount, durationCount, setDurationCount, caloriesCount, setCaloriesCount, } = contextValue;
+    const { savedPlan, setSavedPlan, savedCount, setSavedCount, savedDurationCount, setSavedDurationCount, savedCaloriesCount, setSavedCaloriesCount, } = contextValue;
 
 
     const handleRemovePlan = () => {
 
-        const newAddedPlan = addedWorkoutPlan.filter((plan) => plan.id !== workout.id)
+        const newSavededPlan = savedPlan.filter((plan) => plan.id !== workout.id)
 
-        setAddedWorkoutPlan(newAddedPlan);
-        setPlanCount(planCount - 1);
-        setDurationCount(durationCount - workout.duration);
-        setCaloriesCount(caloriesCount - workout.caloriesBurned);
+        setSavedPlan(newSavededPlan);
+        setSavedCount(savedCount - 1);
+        setSavedDurationCount(savedDurationCount - workout.duration);
+        setSavedCaloriesCount(savedCaloriesCount - workout.caloriesBurned);
 
-        toast.success('Removed from todays plan', {
+        toast.success('Removed from saved', {
             position: "bottom-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -39,12 +39,6 @@ const CrossButton = ({ workout }: IMarkDoneProp) => {
 
     return (
         <div>
-            {/* <Link
-                href="/"
-                className="inline-flex items-center rounded-full bg-transparent p-3 text-gray-200 transition-colors duration-200 hover:bg-[#0F1115] hover:text-white"
-            >
-            </Link> */}
-
             <button
                 onClick={handleRemovePlan}
                 className="inline-flex items-center rounded-full bg-transparent p-3 text-gray-200 transition-colors duration-200 hover:bg-[#0F1115] hover:text-white"
@@ -56,4 +50,4 @@ const CrossButton = ({ workout }: IMarkDoneProp) => {
     );
 };
 
-export default CrossButton;
+export default SavedCrossButton;

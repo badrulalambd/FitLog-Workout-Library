@@ -13,7 +13,6 @@ const AddToTodaysPlan = ({ workout }: ITodaysPlanProp) => {
     const contextValue = useContext(UserContext);
     const { addedWorkoutPlan, setAddedWorkoutPlan, planCount, setPlanCount, durationCount, setDurationCount, caloriesCount, setCaloriesCount,} = contextValue;
 
-
     const handleAddToPlan = () => {
         const checkExist = addedWorkoutPlan.some((work: IWorkoutType) => work.id === workout.id)
         if (checkExist) {

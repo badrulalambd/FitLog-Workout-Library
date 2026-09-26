@@ -6,7 +6,7 @@ import React, { useContext } from 'react';
 const InfoTable = () => {
 
     const contextValue = useContext(UserContext);
-    const {planCount, durationCount, caloriesCount} = contextValue;
+    const {tableExercises, tableMinutes, tableCalories} = contextValue;
 
     return (
         <div className="overflow-hidden rounded-2xl border border-gray-800 bg-[#1A1D23]">
@@ -30,15 +30,15 @@ const InfoTable = () => {
                 <tbody>
                     <tr>
                         <td className="px-8 pb-6 text-4xl font-bold text-[#ccff00]">
-                            {planCount}
+                            {tableExercises}
                         </td>
 
                         <td className="px-8 pb-6 border-l border-dotted border-gray-600 text-4xl font-bold text-gray-200">
-                            {durationCount}
+                            {tableMinutes}
                         </td>
 
                         <td className="px-8 pb-6 border-l border-dotted border-gray-600 text-4xl font-bold text-gray-200">
-                            {caloriesCount}
+                            {tableCalories}
                         </td>
                     </tr>
                 </tbody>

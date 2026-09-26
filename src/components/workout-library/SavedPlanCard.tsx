@@ -2,15 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaRegClock, FaRegStar } from "react-icons/fa";
 import { LuFlame } from "react-icons/lu";
-import MarkAsDoneButton from "../buttons/MarkAsDone";
-import CrossButton from "../buttons/PlanCrossButton";
-import PlanCrossButton from "../buttons/PlanCrossButton";
+import SavedCrossButton from "../buttons/SavedCrossButton";
 
 interface PlanListProp {
     workout: IWorkoutType;
 }
 
-const PlanListCard = ({ workout }: PlanListProp) => {
+const SavedPlanCard = ({ workout }: PlanListProp) => {
     return (
 
         <div className="rounded-2xl bg-[#1A1D23]">
@@ -74,13 +72,8 @@ const PlanListCard = ({ workout }: PlanListProp) => {
                         </button>
                     </Link>
 
-                    {/* Mark As Done Button */}
-                    <MarkAsDoneButton 
-                    workout={workout}
-                    />
-
                     {/* Cross Button  */}
-                    <PlanCrossButton
+                    <SavedCrossButton
                     workout={workout}
                     />
 
@@ -91,4 +84,4 @@ const PlanListCard = ({ workout }: PlanListProp) => {
     );
 };
 
-export default PlanListCard;
+export default SavedPlanCard;
