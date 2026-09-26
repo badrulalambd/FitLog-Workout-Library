@@ -58,13 +58,13 @@ const WorkoutLibraryCard = ({ workout }: WorkoutProp) => {
                         {/* Duration */}
                         <div className="flex items-center justify-center gap-2 text-base font-medium text-gray-300">
                             <FaRegClock className="text-lg text-[#B1DA00]" />
-                            <span>{workout.duration}</span>
+                            <span>{workout.duration} min</span>
                         </div>
 
                         {/* Calories */}
                         <div className="flex items-center justify-center gap-2 text-base font-medium text-gray-300">
                             <LuFlame className="text-lg text-[#B1DA00]" />
-                            <span>{workout.caloriesBurned}</span>
+                            <span>{workout.caloriesBurned} kcal</span>
                         </div>
 
                         {/* Rating */}

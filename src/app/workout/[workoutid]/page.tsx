@@ -31,18 +31,7 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
     return (
         <div className="bg-[#0F1115] mt-20 py-15">
             <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {/* Left side  */}
-                    {/* <div>
-                        <figure>
-                            <Image
-                                src={workout.image}
-                                width={1000}
-                                height={1000}
-                                alt="workout Img"
-                            />
-                        </figure>
-                    </div> */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {/* Left side */}
                     <div className="h-full">
                         <figure className="relative h-87.5 w-full overflow-hidden rounded-3xl bg-[#1A1D23] sm:h-112.5 md:h-full md:min-h-full">
@@ -151,12 +140,12 @@ const WorkoutDetailPage = async ({ params }: WorkoutDetailPageProps) => {
                         {/* Table end */}
 
                         <div className="text-gray-300">
-                            <h2 className="text-xl md:text-2xl lg:text-3xl uppercase font-semibold my-2">Instructions</h2>
+                            <h2 className="text-1xl md:text-1xl lg:text-2xl uppercase font-semibold my-1">Instructions</h2>
                             {
                                 workout.instructions.map((instruction, index) => (
                                     <span
                                         key={index}
-                                        className="text-[18px] md:text-[20px] font-semibold leading-10"
+                                        className="text-lg md:text-lg font-semibold leading-8"
                                     >
                                         {`${index + 1}. ${instruction}`}
                                         <br />

@@ -10,9 +10,25 @@ type TabType = "today" | "saved";
 
 const PlanTabs = () => {
     const [activeTab, setActiveTab] = useState<TabType>("today");
+    const [sortBy, setSortBy] = useState<"duration" | "calories" | "rating">("duration");
 
     const contextValue = useContext(UserContext);
     const { addedWorkoutPlan, savedPlan, planCount, durationCount, caloriesCount, savedCount, savedDurationCount, savedCaloriesCount, setTableExercises, setTableMinutes, setTableCalories } = contextValue;
+
+    const handleSortPlan = (plans : IWorkoutType[]) => {
+        const sortedPlans = [...plans];
+        if(sortBy === "duration"){
+            sortedPlans.sort((a,b) => a.duration - b.duration);
+        }else if(sortBy === "calories"){
+            sortedPlans.sort((a,b) => b.caloriesBurned - a.caloriesBurned);
+        }else{
+            sortedPlans.sort((a,b) => b.rating - a.rating);
+        }
+        return sortedPlans;
+    }
+
+    const sortTodaysPlan = handleSortPlan(addedWorkoutPlan);
+    const sortSavedPlan = handleSortPlan(savedPlan);
 
     // Update InfoTable whenever the active tab or its data changes
     useEffect(() => {
@@ -77,12 +93,14 @@ const PlanTabs = () => {
                 <div className="w-full sm:w-auto">
                     <h3 className="text-lg font-semibold">Sort By</h3>
                     <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as "duration" | "calories" | "rating")}
                         className="w-full cursor-pointer rounded-xl border border-gray-700 bg-[#0F1115] px-4 py-2.5 text-sm font-medium text-gray-300 outline-none transition-all duration-300 hover:border-[#ccff00] focus:border-[#ccff00] sm:min-w-45"
                         defaultValue="all"
                     >
-                        <option value="duration">Duration</option>
-                        <option value="calories">Calories</option>
-                        <option value="rating">Rating</option>
+                        <option value={"duration"}>Duration</option>
+                        <option value={"calories"}>Calories</option>
+                        <option value={"rating"}>Rating</option>
                     </select>
                 </div>
             </div>
@@ -90,10 +108,10 @@ const PlanTabs = () => {
             {/* Tab Content */}
             <div className="bg-[#0F1115]">
                 {activeTab === "today" ? (
-                    addedWorkoutPlan.length > 0 ?
+                    sortTodaysPlan.length > 0 ?
                         <div className="grid grid-cols-1 gap-4">
                             {
-                                addedWorkoutPlan.map((workout) => <PlanListCard
+                                sortTodaysPlan.map((workout) => <PlanListCard
                                     key={workout.id}
                                     workout={workout}
                                 />)
@@ -102,10 +120,10 @@ const PlanTabs = () => {
                         :
                         <EmptyPlanBox />
                 ) : (
-                    savedPlan.length > 0 ?
+                    sortSavedPlan.length > 0 ?
                         <div className="grid grid-cols-1 gap-4">
                             {
-                                savedPlan.map((workout) => <SavedPlanCard
+                                sortSavedPlan.map((workout) => <SavedPlanCard
                                     key={workout.id}
                                     workout={workout}
                                 />)
