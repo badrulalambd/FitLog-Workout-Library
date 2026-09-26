@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FaRegClock, FaRegStar } from "react-icons/fa";
 import { LuFlame } from "react-icons/lu";
 import MarkAsDoneButton from "../buttons/MarkAsDone";
-import CrossButton from "../buttons/PlanCrossButton";
 import PlanCrossButton from "../buttons/PlanCrossButton";
 
 interface PlanListProp {

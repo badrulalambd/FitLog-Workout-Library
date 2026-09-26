@@ -1,7 +1,7 @@
 'use client'
 
 import { UserContext } from '@/context/UserContext';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 
 const InfoTable = () => {
 

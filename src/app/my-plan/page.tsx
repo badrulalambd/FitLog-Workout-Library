@@ -3,7 +3,7 @@ import PlanTabs from '@/components/my-plan/PlanTabs';
 
 const MyPlanPage = () => {
     return (
-        <div className="bg-[#0F1115] text-gray-200 pt-38 pb-15">
+        <div className="bg-[#0F1115] text-gray-200 pt-38 pb-15 mx-5">
             <div className='container mx-auto grid grid-cols-1 gap-10'>
                 {/* Header Section */}
                 <div className="flex flex-col gap-10">
