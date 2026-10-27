@@ -15,12 +15,19 @@ The project focuses on building a clean, responsive, and user-friendly interface
 ## 🛠️ Technologies Used
 
 ⚛️ **React** — Component-based UI development
+
 ▲ **Next.js** — React framework with App Router
+
 🔷 **TypeScript** — Type-safe development
+
 🎨 **Tailwind CSS** — Responsive and modern UI styling
+
 🌼 **DaisyUI** — Pre-built UI components and utilities
+
 🧩 **React Icons** — Icons for workout and interface elements
+
 🔔 **React Toastify** — Toast notifications and user feedback
+
 🌐 **Context API** — Global state management
 
 ---
