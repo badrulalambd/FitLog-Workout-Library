@@ -59,3 +59,55 @@ The project focuses on building a clean, responsive, and user-friendly interface
 - Tablet and desktop layouts
 - Modern dark-themed interface
 - Interactive buttons and hover effects
+
+## 💻 How to Run the Project Locally
+
+Follow these steps to set up and run FitLog – Workout Library on your local machine.
+
+### Prerequisites
+
+Make sure you have installed the following:
+
+**Node.js** — Required to run the Next.js application.
+
+**npm** — Package manager included with Node.js.
+
+**Git** — Required to clone the repository.
+
+### Step 1: Clone the Repository
+
+Open your terminal and run:
+
+```
+git clone https://github.com/badrulalambd/FitLog-Workout-Library.git
+```
+
+### Step 2: Navigate to the Project Directory
+
+```
+cd FitLog-Workout-Library
+```
+
+### Step 3: Install Dependencies
+
+Install all required project dependencies using npm:
+
+```
+npm install
+```
+
+### Step 4: Start the Development Server
+
+Run the following command:
+
+```
+npm run dev
+```
+
+### Step 5: Open the Application
+
+Open your browser and visit:
+
+```
+http://localhost:3000
+```
